@@ -1,0 +1,14 @@
+# Tested against the included model artifacts; keep scikit-learn aligned with training.
+fastapi==0.128.2
+uvicorn[standard]>=0.30,<1.0
+pydantic>=2.13,<3.0
+pandas==2.2.3
+numpy==2.3.5
+scikit-learn==1.8.0
+joblib==1.5.3
+SQLAlchemy==2.0.50
+python-multipart>=0.0.9
+python-dotenv>=1.0
+kagglehub[pandas-datasets]>=0.3
+pytest>=8.0
+httpx>=0.27
