@@ -1,0 +1,235 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, 'Times New Roman', serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
+
+  /* Design system color tokens — warm editorial palette */
+  --color-canvas: #F8F5EF;
+  --color-surface: #FFFEFC;
+  --color-surface-muted: #F1E9D9;
+  --color-ink: #171611;
+  --color-muted-ink: #6E6A61;
+  --color-border-base: #E9E2D7;
+  --color-sidebar-bg: #15140F;
+  --color-sidebar-muted: #A9A296;
+  --color-primary-indigo: #1D6044;
+  --color-primary-hover: #174E37;
+  --color-teal: #0F766E;
+  --color-teal-bright: #7FBFA4;
+  --color-violet: #8A6A2F;
+  --color-risk-low: #15803D;
+  --color-risk-medium: #B45309;
+  --color-risk-high: #BE123C;
+  --color-risk-low-bg: #F0FDF4;
+  --color-risk-medium-bg: #FFFBEB;
+  --color-risk-high-bg: #FFF1F2;
+  --color-info: #1D4ED8;
+
+  /* shadcn tokens */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #F8F5EF;
+  --foreground: #171611;
+  --card: #FFFEFC;
+  --card-foreground: #171611;
+  --popover: #FFFEFC;
+  --popover-foreground: #171611;
+  --primary: #1D6044;
+  --primary-foreground: #FFFEFC;
+  --secondary: #F1E9D9;
+  --secondary-foreground: #171611;
+  --muted: #F1E9D9;
+  --muted-foreground: #6E6A61;
+  --accent: #F1E9D9;
+  --accent-foreground: #171611;
+  --destructive: #BE123C;
+  --border: #E9E2D7;
+  --input: #E9E2D7;
+  --ring: #1D6044;
+  --chart-1: #1D6044;
+  --chart-2: #0F766E;
+  --chart-3: #B45309;
+  --chart-4: #8A6A2F;
+  --chart-5: #BE123C;
+  --radius: 0.5rem;
+  --sidebar: #15140F;
+  --sidebar-foreground: #F1E9D9;
+  --sidebar-primary: #1D6044;
+  --sidebar-primary-foreground: #FFFEFC;
+  --sidebar-accent: #26241C;
+  --sidebar-accent-foreground: #F1E9D9;
+  --sidebar-border: #2C2A21;
+  --sidebar-ring: #1D6044;
+}
+
+.dark {
+  --background: #12110C;
+  --foreground: #F3EFE6;
+  --card: #1C1A14;
+  --card-foreground: #F3EFE6;
+  --popover: #1C1A14;
+  --popover-foreground: #F3EFE6;
+  --primary: #3E9C6E;
+  --primary-foreground: #0E0D09;
+  --secondary: #26241C;
+  --secondary-foreground: #F3EFE6;
+  --muted: #26241C;
+  --muted-foreground: #A9A296;
+  --accent: #26241C;
+  --accent-foreground: #F3EFE6;
+  --destructive: #F43F5E;
+  --border: rgba(255,255,255,0.1);
+  --input: rgba(255,255,255,0.15);
+  --ring: #3E9C6E;
+  --chart-1: #7FBFA4;
+  --chart-2: #2DD4BF;
+  --chart-3: #D6B26A;
+  --chart-4: #FCD34D;
+  --chart-5: #F87171;
+  --sidebar: #12110C;
+  --sidebar-foreground: #E6E1D5;
+  --sidebar-primary: #3E9C6E;
+  --sidebar-primary-foreground: #0E0D09;
+  --sidebar-accent: #26241C;
+  --sidebar-accent-foreground: #E6E1D5;
+  --sidebar-border: rgba(255,255,255,0.08);
+  --sidebar-ring: #3E9C6E;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+
+  /* Tabular numbers for data display */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Focus visible styles */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+  }
+}
+
+/* Chart container utility */
+.chart-container {
+  width: 100%;
+  min-height: 0;
+}
+
+/* Risk badge utilities */
+.risk-low {
+  color: #15803D;
+  background-color: #F0FDF4;
+  border-color: #BBF7D0;
+}
+.risk-medium {
+  color: #B45309;
+  background-color: #FFFBEB;
+  border-color: #FDE68A;
+}
+.risk-high {
+  color: #BE123C;
+  background-color: #FFF1F2;
+  border-color: #FECDD3;
+}
+
+/* Landing page warm hero backdrop */
+.hero-warm {
+  background:
+    radial-gradient(ellipse 60% 55% at 78% -10%, rgba(29, 96, 68, 0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 45% at 8% 0%, rgba(197, 168, 110, 0.14) 0%, transparent 60%),
+    #F8F5EF;
+}
+
+/* Animated gradient border for hero CTA */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
