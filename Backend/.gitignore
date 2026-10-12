@@ -1,0 +1,37 @@
+# ── Environment & secrets ─────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Python ────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.log
+
+# ── Local dataset cache (raw CSV is not distributed) ──
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# ── Local SQLite prediction history ───────────────────
+data/*.db
+data/*.sqlite3
+
+# ── Trained model artifacts (regenerate with scripts) ─
+artifacts/*.joblib
+artifacts/model_metadata.json
+artifacts/model_comparison.json
+artifacts/evaluation_metrics.json
+artifacts/feature_importance.json
+artifacts/evaluation_curves.json
+artifacts/artifact_manifest.json
+!artifacts/.gitkeep
+!artifacts/README.md
