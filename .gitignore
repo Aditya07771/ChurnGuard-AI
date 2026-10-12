@@ -1,0 +1,21 @@
+# ── OS / editor clutter ───────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.swo
+
+# ── Environment & secrets ─────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Logs ──────────────────────────────────────────────
+*.log
+logs/
+
+# Python ignores live in Backend/.gitignore.
+# Node / Vite ignores live in Frontend/.gitignore.
